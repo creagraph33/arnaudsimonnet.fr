@@ -66,7 +66,6 @@ enableEmoji = false
     weight = 3
   [[menu.footer]]
     name = "Conditions d'utilisation"
-    url = "/conditions-d-utilisation/"
     weight = 4
 
 [outputs]
