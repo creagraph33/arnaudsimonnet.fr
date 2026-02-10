@@ -154,10 +154,3 @@ collections:
         fields:
           - { name: "title", label: "Titre", widget: "string" }
           - { name: "body", label: "Contenu", widget: "markdown" }
-
-      - name: "conditions-d-utilisation"
-        label: "Conditions d'utilisation"
-        file: "content/conditions-d-utilisation.md"
-        fields:
-          - { name: "title", label: "Titre", widget: "string" }
-          - { name: "body", label: "Contenu", widget: "markdown" }
