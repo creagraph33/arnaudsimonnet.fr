@@ -64,9 +64,6 @@ enableEmoji = false
     name = "Politique de confidentialité"
     url = "/politique-de-confidentialite/"
     weight = 3
-  [[menu.footer]]
-    name = "Conditions d'utilisation"
-    weight = 4
 
 [outputs]
   home = ["HTML", "RSS"]
