@@ -1,0 +1,57 @@
+{{ define "main" }}
+<div class="container">
+
+  <!-- Hero -->
+  <section class="hero fade-in">
+    <h1>{{ .Site.Title }}</h1>
+    <div class="divider"></div>
+    <p class="subtitle">Science-fiction, romance et culture polynésienne — explorez des univers où tradition ancestrale et imaginaire se rencontrent.</p>
+  </section>
+
+  <!-- Nouveauté : Lagoon Love -->
+  <section class="section">
+    <span class="book-card__tag book-card__tag--new" style="display:block;text-align:center;margin-bottom:1rem;">Nouveauté</span>
+    <h2 class="section-title">Lagoon Love</h2>
+    <div class="divider"></div>
+    <p class="section-subtitle">Léa, organisatrice de mariages parisienne, plonge dans les eaux turquoise de Bora Bora… et dans les bras de Teiki. Entre quiproquos culturels, famille envahissante et couchers de soleil incendiaires, découvrez cette BD manga qui célèbre l'amour et la culture polynésienne.</p>
+    <div style="text-align:center">
+      {{ with resources.GetMatch "images/lagoon-love-cover.*" }}
+        <img src="{{ .RelPermalink }}" alt="Lagoon Love" style="max-width:350px;margin:0 auto 2rem;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,0.4)">
+      {{ else }}
+        <img src="/images/lagoon-love-cover.webp" alt="Lagoon Love" style="max-width:350px;margin:0 auto 2rem;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,0.4)">
+      {{ end }}
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="/lagoon-love/" class="btn btn-gold">Découvrir</a>
+        <a href="https://www.amazon.fr/dp/B0GGZCTZH5/" class="btn btn-outline" target="_blank" rel="noopener">Acheter sur Amazon</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Les Abysses Stellaires -->
+  <section class="section">
+    <h2 class="section-title">Les Abysses Stellaires</h2>
+    <div class="divider"></div>
+    <p class="section-subtitle">Un voyage interstellaire aux confins de notre galaxie, à la découverte d'un mystère ancestral reliant la tradition polynésienne et une civilisation extraterrestre avancée.</p>
+    <div style="text-align:center">
+      <img src="/images/couv_les_abysses-stellaires_h.png" alt="Les Abysses Stellaires" style="max-width:300px;margin:0 auto 2rem;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,0.4)">
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="/les-abysses-stellaires/" class="btn btn-turquoise">En savoir plus</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Stellar Abyss -->
+  <section class="section">
+    <h2 class="section-title">The Stellar Abyss</h2>
+    <div class="divider"></div>
+    <p class="section-subtitle">An interstellar journey to the far reaches of our galaxy, uncovering an ancient mystery that links Polynesian tradition and an advanced extraterrestrial civilization.</p>
+    <div style="text-align:center">
+      <img src="/images/stellar-abyss-cover.png" alt="The Stellar Abyss" style="max-width:300px;margin:0 auto 2rem;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,0.4)">
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="/the-stellar-abyss/" class="btn btn-outline">Discover</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+{{ end }}

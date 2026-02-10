@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+  {{- partial "head.html" . -}}
+</head>
+<body>
+  {{- partial "header.html" . -}}
+  <div class="nav-overlay" id="navOverlay"></div>
+  <main>
+    {{- block "main" . }}{{ end -}}
+  </main>
+  {{- partial "footer.html" . -}}
+  {{- partial "cookie-banner.html" . -}}
+  <script src="/js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <nav class="footer-nav">
+        {{ range .Site.Menus.footer }}
+        <a href="{{ .URL }}">{{ .Name }}</a>
+        {{ end }}
+      </nav>
+      <p class="footer-copy">&copy;Arnaud Simonnet {{ now.Year }}. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

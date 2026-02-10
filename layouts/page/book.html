@@ -1,0 +1,81 @@
+{{ define "main" }}
+<div class="container">
+
+  <!-- Book Hero -->
+  <section class="book-hero fade-in">
+    <div>
+      <img src="{{ .Params.cover }}" alt="{{ .Title }}" class="book-hero__cover">
+    </div>
+    <div class="book-hero__info">
+      <h1 class="book-hero__title">{{ .Title }}</h1>
+      {{ with .Params.subtitle }}<p class="book-hero__subtitle">{{ . }}</p>{{ end }}
+      <p>{{ .Params.accroche }}</p>
+
+      <div class="book-meta">
+        {{ with .Params.editeur }}<div class="book-meta__item"><strong>Éditeur :</strong> {{ . }}</div>{{ end }}
+        {{ with .Params.pages }}<div class="book-meta__item"><strong>Pages :</strong> {{ . }}</div>{{ end }}
+        {{ with .Params.format }}<div class="book-meta__item"><strong>Format :</strong> {{ . }}</div>{{ end }}
+        {{ with .Params.prix }}<div class="book-meta__item"><strong>Prix :</strong> {{ . }}</div>{{ end }}
+        {{ with .Params.isbn }}<div class="book-meta__item"><strong>ISBN :</strong> {{ . }}</div>{{ end }}
+      </div>
+
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem">
+        {{ with .Params.lien_achat }}
+        <a href="{{ . }}" class="btn btn-gold" target="_blank" rel="noopener">Acheter</a>
+        {{ end }}
+        {{ with .Params.lien_musique }}
+        <a href="{{ . }}" class="btn btn-outline">Univers Musical</a>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  <!-- Pillars -->
+  {{ with .Params.piliers }}
+  <section class="section">
+    <div class="pillars">
+      {{ range . }}
+      <div class="pillar fade-in">
+        <div class="pillar__icon">{{ .icon }}</div>
+        <h3 class="pillar__title">{{ .titre }}</h3>
+        <p class="pillar__text">{{ .texte }}</p>
+      </div>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- Content (synopsis etc.) -->
+  <section class="section">
+    <div class="page-content" style="padding-top:0">
+      {{ .Content }}
+    </div>
+  </section>
+
+  <!-- Extracts -->
+  {{ with .Params.extraits }}
+  <section class="section">
+    <h2 class="section-title">Extraits du roman</h2>
+    <div class="divider"></div>
+    {{ range . }}
+    <div class="extract fade-in">
+      <h3 class="extract__title">{{ .titre }}</h3>
+      <div class="extract__text">{{ .texte | markdownify }}</div>
+    </div>
+    {{ end }}
+  </section>
+  {{ end }}
+
+  <!-- Video -->
+  {{ with .Params.youtube_id }}
+  <section class="section" style="max-width:800px;margin:0 auto">
+    <h2 class="section-title">Vidéo</h2>
+    <div class="divider"></div>
+    <div class="video-wrapper">
+      <iframe src="https://www.youtube-nocookie.com/embed/{{ . }}" title="Vidéo Les Abysses Stellaires" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </section>
+  {{ end }}
+
+</div>
+{{ end }}

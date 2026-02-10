@@ -1,0 +1,50 @@
+{{ define "main" }}
+<div class="container">
+
+  <!-- Book Hero -->
+  <section class="book-hero fade-in">
+    <div>
+      <img src="{{ .Params.cover }}" alt="{{ .Title }}" class="book-hero__cover">
+    </div>
+    <div class="book-hero__info">
+      <span class="book-card__tag book-card__tag--new">Sortie Événement</span>
+      <h1 class="book-hero__title">{{ .Title }}</h1>
+      {{ with .Params.subtitle }}<p class="book-hero__subtitle">{{ . }}</p>{{ end }}
+      <p>{{ .Params.accroche }}</p>
+
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem">
+        {{ with .Params.lien_achat }}
+        <a href="{{ . }}" class="btn btn-gold" target="_blank" rel="noopener">Acheter sur Amazon</a>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  <!-- Synopsis -->
+  <section class="section">
+    <h2 class="section-title">{{ .Params.section_titre | default "Une Romance Inoubliable sous les Tropiques" }}</h2>
+    <div class="divider"></div>
+    {{ with .Params.section_sous_titre }}<p class="section-subtitle">{{ . }}</p>{{ end }}
+    <div class="page-content" style="padding-top:0">
+      {{ .Content }}
+    </div>
+  </section>
+
+  <!-- BD Gallery -->
+  {{ with .Params.planches }}
+  <section class="section">
+    <h2 class="section-title">Aperçu des planches</h2>
+    <div class="divider"></div>
+    <div class="bd-gallery">
+      {{ range . }}
+      <div class="bd-gallery__item fade-in">
+        <img src="{{ .image }}" alt="{{ .legende }}" loading="lazy">
+        <div class="bd-gallery__caption">{{ .legende }}</div>
+      </div>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+</div>
+{{ end }}

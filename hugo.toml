@@ -1,0 +1,77 @@
+baseURL = "https://arnaudsimonnet.fr/"
+languageCode = "fr"
+title = "Arnaud Simonnet — L'Imaginaire à ses Étoiles"
+enableRobotsTXT = true
+enableEmoji = false
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[params]
+  description = "Auteur de science-fiction et romance — Les Abysses Stellaires, Lagoon Love"
+  author = "Arnaud Simonnet"
+  email = "abysses.stellaires@gmail.com"
+  phone = "0636379938"
+  address = "52 Chemin des Carrières, Prignac et Marcamps, 33710, France"
+  logo = "/images/logo-as.png"
+  ogImage = "/images/og-default.jpg"
+
+[menu]
+  [[menu.main]]
+    name = "Accueil"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Lagoon Love"
+    url = "/lagoon-love/"
+    weight = 2
+  [[menu.main]]
+    name = "Les Abysses Stellaires"
+    url = "/les-abysses-stellaires/"
+    weight = 3
+  [[menu.main]]
+    name = "The Stellar Abyss"
+    url = "/the-stellar-abyss/"
+    weight = 4
+  [[menu.main]]
+    name = "À propos"
+    url = "/a-propos/"
+    weight = 5
+  [[menu.main]]
+    name = "Univers Musical"
+    url = "/univers-musical/"
+    weight = 6
+  [[menu.main]]
+    name = "Acheter"
+    url = "/acheter/"
+    weight = 7
+  [[menu.main]]
+    name = "Dossier de presse"
+    url = "/dossier-de-presse/"
+    weight = 8
+
+  [[menu.footer]]
+    name = "Mentions légales"
+    url = "/mentions-legales/"
+    weight = 1
+  [[menu.footer]]
+    name = "Charte de référencement"
+    url = "/charte-de-referencement/"
+    weight = 2
+  [[menu.footer]]
+    name = "Politique de confidentialité"
+    url = "/politique-de-confidentialite/"
+    weight = 3
+  [[menu.footer]]
+    name = "Conditions d'utilisation"
+    url = "/conditions-d-utilisation/"
+    weight = 4
+
+[outputs]
+  home = ["HTML", "RSS"]
+
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5

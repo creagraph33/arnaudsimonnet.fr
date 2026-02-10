@@ -1,0 +1,162 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "static/images"
+public_folder: "/images"
+
+locale: "fr"
+
+slug:
+  encoding: "ascii"
+  clean_accents: true
+
+collections:
+  # --- Pages principales ---
+  - name: "pages"
+    label: "Pages"
+    files:
+      - name: "accueil"
+        label: "Accueil"
+        file: "content/_index.md"
+        fields:
+          - { name: "title", label: "Titre", widget: "string" }
+          - { name: "description", label: "Description SEO", widget: "string" }
+
+      - name: "lagoon-love"
+        label: "Lagoon Love"
+        file: "content/lagoon-love.md"
+        fields:
+          - { name: "title", label: "Titre", widget: "string" }
+          - { name: "description", label: "Description SEO", widget: "string" }
+          - { name: "subtitle", label: "Sous-titre", widget: "string" }
+          - { name: "cover", label: "Image de couverture", widget: "image" }
+          - { name: "accroche", label: "Accroche", widget: "text" }
+          - { name: "lien_achat", label: "Lien achat", widget: "string" }
+          - { name: "section_titre", label: "Titre section principale", widget: "string" }
+          - { name: "section_sous_titre", label: "Sous-titre section", widget: "string" }
+          - name: "planches"
+            label: "Planches BD"
+            widget: "list"
+            fields:
+              - { name: "image", label: "Image", widget: "image" }
+              - { name: "legende", label: "Légende", widget: "string" }
+          - { name: "body", label: "Contenu", widget: "markdown" }
+
+      - name: "les-abysses-stellaires"
+        label: "Les Abysses Stellaires"
+        file: "content/les-abysses-stellaires.md"
+        fields:
+          - { name: "title", label: "Titre", widget: "string" }
+          - { name: "description", label: "Description SEO", widget: "string" }
+          - { name: "subtitle", label: "Sous-titre", widget: "string" }
+          - { name: "cover", label: "Couverture", widget: "image" }
+          - { name: "accroche", label: "Accroche", widget: "text" }
+          - { name: "editeur", label: "Éditeur", widget: "string" }
+          - { name: "prix", label: "Prix", widget: "string" }
+          - { name: "pages", label: "Nombre de pages", widget: "string" }
+          - { name: "format", label: "Format", widget: "string" }
+          - { name: "isbn", label: "ISBN", widget: "string" }
+          - { name: "lien_achat", label: "Lien achat", widget: "string" }
+          - { name: "lien_musique", label: "Lien univers musical", widget: "string", required: false }
+          - { name: "youtube_id", label: "ID vidéo YouTube", widget: "string", required: false }
+          - name: "piliers"
+            label: "Piliers"
+            widget: "list"
+            fields:
+              - { name: "icon", label: "Icône (emoji)", widget: "string" }
+              - { name: "titre", label: "Titre", widget: "string" }
+              - { name: "texte", label: "Texte", widget: "text" }
+          - name: "extraits"
+            label: "Extraits"
+            widget: "list"
+            required: false
+            fields:
+              - { name: "titre", label: "Titre", widget: "string" }
+              - { name: "texte", label: "Texte", widget: "markdown" }
+          - { name: "body", label: "Contenu principal", widget: "markdown" }
+
+      - name: "the-stellar-abyss"
+        label: "The Stellar Abyss"
+        file: "content/the-stellar-abyss.md"
+        fields:
+          - { name: "title", label: "Title", widget: "string" }
+          - { name: "description", label: "SEO Description", widget: "string" }
+          - { name: "subtitle", label: "Subtitle", widget: "string" }
+          - { name: "cover", label: "Cover image", widget: "image" }
+          - { name: "accroche", label: "Tagline", widget: "text" }
+          - { name: "editeur", label: "Publisher", widget: "string" }
+          - { name: "prix", label: "Price", widget: "string" }
+          - { name: "pages", label: "Pages", widget: "string" }
+          - { name: "format", label: "Format", widget: "string" }
+          - { name: "isbn", label: "ISBN", widget: "string" }
+          - { name: "lien_achat", label: "Buy link", widget: "string" }
+          - name: "piliers"
+            label: "Pillars"
+            widget: "list"
+            fields:
+              - { name: "icon", label: "Icon (emoji)", widget: "string" }
+              - { name: "titre", label: "Title", widget: "string" }
+              - { name: "texte", label: "Text", widget: "text" }
+          - { name: "body", label: "Content", widget: "markdown" }
+
+      - name: "a-propos"
+        label: "À propos"
+        file: "content/a-propos.md"
+        fields:
+          - { name: "title", label: "Titre", widget: "string" }
+          - { name: "description", label: "Description SEO", widget: "string" }
+          - { name: "body", label: "Contenu", widget: "markdown" }
+
+      - name: "univers-musical"
+        label: "Univers Musical"
+        file: "content/univers-musical.md"
+        fields:
+          - { name: "title", label: "Titre", widget: "string" }
+          - { name: "body", label: "Contenu", widget: "markdown" }
+
+      - name: "acheter"
+        label: "Acheter"
+        file: "content/acheter.md"
+        fields:
+          - { name: "title", label: "Titre", widget: "string" }
+          - { name: "body", label: "Contenu", widget: "markdown" }
+
+      - name: "dossier-de-presse"
+        label: "Dossier de presse"
+        file: "content/dossier-de-presse.md"
+        fields:
+          - { name: "title", label: "Titre", widget: "string" }
+          - { name: "body", label: "Contenu", widget: "markdown" }
+
+  # --- Pages légales ---
+  - name: "legal"
+    label: "Pages légales"
+    files:
+      - name: "mentions-legales"
+        label: "Mentions légales"
+        file: "content/mentions-legales.md"
+        fields:
+          - { name: "title", label: "Titre", widget: "string" }
+          - { name: "body", label: "Contenu", widget: "markdown" }
+
+      - name: "politique-de-confidentialite"
+        label: "Politique de confidentialité"
+        file: "content/politique-de-confidentialite.md"
+        fields:
+          - { name: "title", label: "Titre", widget: "string" }
+          - { name: "body", label: "Contenu", widget: "markdown" }
+
+      - name: "charte-de-referencement"
+        label: "Charte de référencement"
+        file: "content/charte-de-referencement.md"
+        fields:
+          - { name: "title", label: "Titre", widget: "string" }
+          - { name: "body", label: "Contenu", widget: "markdown" }
+
+      - name: "conditions-d-utilisation"
+        label: "Conditions d'utilisation"
+        file: "content/conditions-d-utilisation.md"
+        fields:
+          - { name: "title", label: "Titre", widget: "string" }
+          - { name: "body", label: "Contenu", widget: "markdown" }
