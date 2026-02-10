@@ -1,5 +1,5 @@
 ---
-title: Mentions légales
+title: A SUPPRIMER
 description: Conditions d'utilisation du site arnaudsimonnet.fr
 ---
 ## **Mentions légales**
