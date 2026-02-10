@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: creagraph33/arnaudsimonnet.fr
   branch: main
 
 media_folder: "static/images"
